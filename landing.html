@@ -49,7 +49,7 @@
         </ul>
     </div>
     <!--
-        создание таблицы
+        создание таблицы + обработчик события
     -->
     <table id="app3" @click="func1"> <!-- v-on:click -->
         <thead>
@@ -63,9 +63,9 @@
             </tr>
         </tbody>
     </table>
-    <!--
-        для функций
-    -->
+    <div id="app4">
+        <button @click="high"> Counter = {{counter}}</button>
+    </div>
     <script src="./js/script1.js"></script>
 </body>
 </html>

@@ -38,3 +38,19 @@ var app3 = new Vue({
         }
     },
 })
+var app4 = new Vue({
+    el: '#app4',
+    data: {
+        counter: 1,
+    },
+    created: function(){ /* жизненный цикл(создание) */
+        // this.counter = 3
+        this.high();
+    },
+    methods:{
+        high(){
+            this.counter++
+        }
+        
+    },
+})
