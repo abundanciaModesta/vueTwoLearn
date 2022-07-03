@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <title>Vue First Application</title>
+</head>
+<body>
+    <div id="app" v-bind:title="title"> <!-- Если хотим вывести текст, нужно заключить из в кавычки, так же для сокращения записи можно написать :title-->
+        {{ message }}
+        <template v-if="status">
+            <h1>Заголовок 1</h1>
+            <p>текст 1</p>
+        </template>
+        <template v-else>
+            <h1>Заголовок 2</h1>
+            <p>текст 2</p>
+        </template>
+        <!--
+            для создания динамического сss класса используем v-bind
+            можно использовать статичные классы class и динамические :class
+        -->
+        <div :class="{ active: isActive, 'btn-default': isBtn }">
+        </div>
+        <!--
+            классы в условии: условие?правда,ложь, всегда
+            при необходимости вывода нескольких классов ввод через пробел
+        -->
+        <div :class="[ isActive?'active':'disabled','default']">
+        </div>
+        <!--
+            динамические стили
+        -->
+        <h1 :style="{ color: 'red', width: width + 'px'}">
+            Hello
+        </h1>
+    </div>
+    <!--
+        для создания списков
+    -->
+    <div id="app2">
+        <ul>
+            <li v-for="(item, index) in list">{{index}}: {{ item }}</li>
+        </ul>
+        <ul>
+            <li v-for="user in users">{{user.id}}: {{user.name}}</li>
+        </ul>
+    </div>
+    <!--
+        создание таблицы
+    -->
+    <table id="app3" @click="nameFunction2"> <!-- v-on:click -->
+        <thead>
+            <th>ID</th>
+            <th>Name</th>
+        </thead>
+        <tbody>
+            <tr v-for="user in users">
+                <td>{{user.id}}</td>
+                <td>{{user.name}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <!--
+        для функций
+    -->
+    <script src="./js/script1.js"></script>
+</body>
+</html>
