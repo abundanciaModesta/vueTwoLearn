@@ -30,11 +30,11 @@ var app3 = new Vue({
         ],
     },
     methods:{ //два способа объявить функцию
-        nameFunction(){
-            alert(nameFunction);
-        }, //первый способ
-        nameFunction2: function(){
-            alert(nameFunction2);
-        }, //второй
+        func1(){
+            alert(1)
+        },
+        func2: function(){
+            alert(2)
+        }
     },
 })
