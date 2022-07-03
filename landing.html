@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>Vue First Application</title>
 </head>
 <body>
@@ -65,6 +66,21 @@
     </table>
     <div id="app4">
         <button @click="high"> Counter = {{counter}}</button>
+    </div>
+    <!--
+        создание формы
+    -->
+    <div id="app5">
+        <h3>{{textSearch}} lenght({{textSearch.length}})</h3>
+         <button @click="getHashtags">Грузи</button>
+         <ul>
+            <li v-for="item in hashtags">{{item}}</li>
+         </ul>
+         <button @click="getCities">Грузи</button>
+         <ul>
+            <li v-for="item in cities">{{item.region}}: {{item.city}}</li>
+         </ul>
+         <input type="text" size="50" v-model="textSearch">
     </div>
     <script src="./js/script1.js"></script>
 </body>
